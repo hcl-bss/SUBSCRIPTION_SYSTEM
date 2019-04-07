@@ -114,7 +114,7 @@ public class SubscriptionScheduler {
         }
     }
 
-    @Transactional(rollbackOn = {Exception.class})
+    @Transactional(Transactional.TxType.REQUIRES_NEW)
     private void createCustomerAccount(Order order, Subscription subscription){
         try{
             Customer customer= null;
